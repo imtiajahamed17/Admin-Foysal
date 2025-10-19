@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foysal | Free Fire</title>
 
-  <!-- Favicon (place a favicon.ico or favicon.png next to this file in the repo/public) -->
   <link rel="icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="favicon.png" />
   <meta name="theme-color" content="#0f172a">
 
-  <!-- Font: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -98,6 +95,13 @@
     .btn.facebook { background: linear-gradient(135deg,#1877F2,#165fc1); }
     .btn.instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4); }
     .btn.tiktok { background: linear-gradient(135deg,#69C9D0,#EE1D52); }
+    
+    /* NEW: Emergency button styles */
+    .btn.phone { background: linear-gradient(135deg,#22c55e,#15803d); } /* Tailwind Green */
+    .btn.email { background: linear-gradient(135deg,#ef4444,#b91c1c); } /* Tailwind Red */
+    .btn.phone:hover, .btn.email:hover {
+        opacity: 0.9;
+    }
 
     .btn .fa-fw { font-size: 18px; width: 20px; text-align: center; }
 
@@ -121,7 +125,7 @@
     }
 
     /* Each group card centered and limited in width so the stack sits in the middle */
-    .group-links a {
+    .group-links a, .group-item { /* Added .group-item for the new text blocks */
       width: 84%;
       max-width: 560px;            /* keep cards a consistent max width */
       margin: 0 auto;              /* center each card horizontally */
@@ -136,7 +140,16 @@
       transition: transform .1s ease, background .12s ease, box-shadow .12s ease;
       box-shadow: 0 6px 18px rgba(2,6,23,0.25);
     }
-
+    
+    /* Style for the new Admin Service items (which are not links) */
+    .group-item {
+        color: #f8fafc; /* Make text a bit brighter */
+        cursor: default;
+        padding: 10px 18px; /* Slight padding adjust for non-link item */
+        font-weight: 500;
+        text-align: left;
+    }
+    
     .group-links a:hover { transform: translateY(-4px); background: rgba(255,255,255,0.035); color: #fff; }
 
     .group-links .icon-wrap {
@@ -150,6 +163,11 @@
       color: white;
       flex-shrink: 0;
       box-shadow: 0 6px 14px rgba(37,99,235,0.18);
+    }
+    
+    /* NEW: Icon wrap for the Admin Service items (Trust/Security theme) */
+    .group-item .icon-wrap {
+        background: linear-gradient(135deg, #00b06b, #00804d); /* A nice green for trust */
     }
 
     .group-links .text {
@@ -171,7 +189,7 @@
       .container { padding: 18px; margin: 18px 12px; }
       .profile-pic { width: 110px; height: 110px; }
       .btn { padding: 8px 12px; font-size: 0.95rem; }
-      .group-links a { width: 92%; padding: 8px 10px; gap:10px; }
+      .group-links a, .group-item { width: 92%; padding: 8px 10px; gap:10px; }
       .group-links .icon-wrap { width: 40px; height: 40px; }
     }
   </style>
@@ -181,7 +199,7 @@
     <img src="foysal.jpg" alt="Foysal Profile" class="profile-pic" />
     <h1>Foysal Hossain</h1>
     <p class="lead">Free Fire ID &amp; Diamond Seller<br>Trusted • Fast • Secure</p>
-
+    
     <div class="section">
       <h2>Connect With Me</h2>
       <div class="links" role="list">
@@ -246,7 +264,44 @@
         </a>
       </div>
     </div>
+    
+    <div class="section">
+      <h2>ADMIN FOYSAL</h2>
+      <div class="group-links">
+        <div class="group-item" role="listitem">
+          <span class="icon-wrap" aria-hidden="true"><i class="fas fa-shield-halved"></i></span>
+          <span class="text">ALL DEAL MANAGED BY ADMIN</span>
+        </div>
+        <div class="group-item" role="listitem">
+          <span class="icon-wrap" aria-hidden="true"><i class="fas fa-shield-halved"></i></span>
+          <span class="text">ID BUY SELL & EXCHANGE</span>
+        </div>
+        <div class="group-item" role="listitem">
+          <span class="icon-wrap" aria-hidden="true"><i class="fas fa-shield-halved"></i></span>
+          <span class="text">GMAIL 100% SECURITY</span>
+        </div>
+        <div class="group-item" role="listitem">
+          <span class="icon-wrap" aria-hidden="true"><i class="fas fa-shield-halved"></i></span>
+          <span class="text">UID TOPUP LOW RATE 24 HOUR SERVICE</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>For Emergency contact with <br> Md Foysal</h2>
+      <div class="links" role="list">
+        <a class="btn phone" role="listitem" href="tel:+8801604469700" aria-label="Phone Number">
+          <i class="fas fa-phone fa-fw" aria-hidden="true"></i>
+          01604469700
+        </a>
+        <a class="btn email" role="listitem" href="mailto:foysalfreefiree777@gmail.com" aria-label="Email Address">
+          <i class="fas fa-envelope fa-fw" aria-hidden="true"></i>
+          Email
+        </a>
+      </div>
+    </div>
 
   </div>
 </body>
 </html>
+
