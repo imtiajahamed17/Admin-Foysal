@@ -29,7 +29,7 @@
       color: white;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      min-height: 100%; /* <-- THIS LINE WAS ADDED */
+      min-height: 100%; /* <-- MODIFIED */
     }
 
     .container {
@@ -213,12 +213,85 @@
       }
 
       .container {
-        margin: 0 auto; /* Removes vertical margin, keeps horizontal centering */
-        height: 90vh; /* Sets height to 90% of the viewport's height */
-        max-height: 850px; /* Optional: a max-height for very tall screens */
+        margin: 0 auto; /* Remove vertical margin */
         
-        /* This is the magic line: */
-        overflow-y: auto; /* Adds a scrollbar *inside* the container ONLY if needed */
+        /* 1. Make it WIDER (to address "smaller") */
+        max-width: 900px; 
+        
+        /* 2. Make it FIT THE SCREEN (height) */
+        height: 95vh; /* A bit taller */
+        max-height: 900px; /* Max height for very tall screens */
+        
+        /* 3. NO SCROLLING */
+        overflow: hidden; 
+        
+        /* 4. We must now SQUISH content to fit */
+        padding: 20px 30px; /* Reduce top/bottom padding */
+      }
+      
+      /* --- Squish Styles to make it fit --- */
+      
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 10px; /* Reduce bottom margin */
+      }
+
+      h1 {
+        font-size: 1.6rem; /* Reduce font size */
+        margin: 4px 0;
+      }
+
+      p.lead {
+        font-size: 0.9rem; /* Reduce font size */
+        margin: 4px 0 15px; /* Reduce bottom margin */
+        line-height: 1.4;
+      }
+      
+      .section {
+        margin-top: 15px; /* Reduce space between sections */
+      }
+      
+      .section h2 {
+        margin: 0 0 8px; /* Reduce bottom margin */
+        font-size: 1rem;
+      }
+      
+      .links {
+        gap: 8px;
+        margin-top: 4px;
+      }
+      .btn {
+        padding: 8px 14px; /* Reduce button size */
+        font-size: 0.9rem;
+      }
+      
+      .group-links {
+        margin-top: 6px;
+        gap: 8px; /* Reduce gap between group links */
+      }
+      
+      .group-links a, .group-item {
+        padding: 8px 12px; /* Reduce padding */
+        gap: 10px;
+      }
+      
+      .group-links .icon-wrap {
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+      }
+      
+      .group-links .text {
+        font-size: 0.95rem;
+      }
+      .group-links .small {
+        font-size: 0.8rem;
+      }
+      
+      .section:last-child h2 {
+         line-height: 1.3;
+         font-size: 1rem;
       }
     }
   </style>
@@ -228,10 +301,10 @@
     
     <img src="img/foysal.jpg" alt="Admin Foysal" class="profile-pic">
     
-    <h1>Admin Foysal Hossain</h1>
+    <h1>Admin Foysal</h1>
     <p class="lead">
-      Free Fire ID &amp; Diamond Seller<br>
-      ID Deal &amp; Exchange Specialist • Trusted • Fast • Secure
+      Free Fire ID Deal &amp; Diamond Seller<br>
+      Trusted • Fast • Secure
     </p>
     
     <div class="section">
@@ -272,27 +345,27 @@
           <span class="text">Group 2 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="httpsm.me/j/AbZF404bCzfiL7yF/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 3">
+        <a href="https://m.me/j/AbZF404bCzfiL7yF/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 3">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 3 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="httpsm.me/j/AbYjVzhRdUUjBUDt/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 4">
+        <a href="https://m.me/j/AbYjVzhRdUUjBUDt/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 4">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 4 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="httpsm.me/j/AbbnraqU6sCXm2Dx/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 5">
+        <a href="https://m.me/j/AbbnraqU6sCXm2Dx/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 5">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 5 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="httpsm.me/j/AbZy-wnpx26AE7qq/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 6">
+        <a href="https://m.me/j/AbZy-wnpx26AE7qq/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 6">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 6 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="httpsm.me/j/AbYMdlDy4P1WitWg/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 7">
+        <a href="https://m.me/j/AbYMdlDy4P1WitWg/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 7">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 7 <span class="small">Buy & Sell</span></span>
         </a>
@@ -316,7 +389,7 @@
         </div>
         <div class="group-item" role="listitem">
           <span class="icon-wrap"aria-hidden="true"><i class="fas fa-shield-halved"></i></span>
-          <span classs="text">UID TOPUP LOW RATE 24 HOUR SERVICE</span>
+          <span class="text">UID TOPUP LOW RATE 24 HOUR SERVICE</span>
         </div>
       </div>
     </div>
