@@ -17,6 +17,7 @@
       --muted: #e2e8f0;
     }
 
+    /* Reset and base styles */
     html, body {
       margin: 0;
       padding: 0;
@@ -24,16 +25,16 @@
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: white;
       width: 100%;
+      min-height: 100vh;
       overflow-x: hidden;
+      overflow-y: auto; /* normal scrolling */
     }
 
-    /* Container behaves like a mobile page */
+    /* Container fills full screen */
     .container {
-      width: 375px; /* mobile width */
-      max-width: 100%;
-      margin: 0 auto; /* center horizontally */
+      width: 100vw;
+      min-height: 100vh;
       background: var(--card-bg);
-      border-radius: 0;
       padding: 25px 20px;
       box-sizing: border-box;
     }
@@ -134,7 +135,7 @@
     .group-links .small { display:block; font-weight:400; color: var(--muted); font-size: 0.85rem; }
 
     @media (max-width:480px){
-      .container { padding: 18px; width: 95%; }
+      .container { padding: 18px; width: 100%; }
       .profile-pic { width: 110px; height: 110px; }
       .btn { padding: 8px 12px; font-size: 0.95rem; }
       .group-links a, .group-item { width: 100%; padding: 8px 10px; gap:10px; }
