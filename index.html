@@ -24,12 +24,12 @@
     /* =================================== */
     /* == 1. MOBILE-FIRST (DEFAULT) STYLES == */
     /* =================================== */
-    /* This is the good layout for phones held normally */
     
     html, body {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
+      /* This is now fixed and correct */
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: white;
       -webkit-font-smoothing:antialiased;
@@ -38,13 +38,8 @@
     }
 
     .container {
-      max-width: 700px;
-      
-      /* THIS IS THE FIX! 
-        I changed "auto" to "12px" for the side margins.
-        This forces the card to fill the width in "Desktop Mode"
-        instead of becoming tiny.
-      */
+      /* This is the fix for the "tiny card" in portrait desktop mode */
+      /* It has NO max-width, so it fills the screen */
       margin: 28px 12px; 
       
       background: var(--card-bg);
@@ -132,7 +127,7 @@
 
     .group-links a, .group-item {
       width: 84%;
-      max-width: 560px;
+      max-width: 560px; /* This keeps the links from being too wide */
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -191,7 +186,7 @@
     @media (max-width:480px){
       .container { 
         padding: 18px; 
-        margin: 18px 12px; /* This is already correct */
+        margin: 18px 12px;
       }
       .profile-pic { width: 110px; height: 110px; }
       .btn { padding: 8px 12px; font-size: 0.95rem; }
@@ -312,22 +307,22 @@
           <span class="text">Group 3 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="httpsia.me/j/AbYjVzhRdUUjBUDt/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 4">
+        <a href="https://m.me/j/AbYjVzhRdUUjBUDt/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 4">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 4 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="httpsia.me/j/AbbnraqU6sCXm2Dx/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 5">
+        <a href="https://m.me/j/AbbnraqU6sCXm2Dx/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 5">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 5 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="httpsia.me/j/AbZy-wnpx26AE7qq/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 6">
+        <a href="https://m.me/j/AbZy-wnpx26AE7qq/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 6">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 6 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="httpsia.me/j/AbYMdlDy4P1WitWg/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 7">
+        <a href="https://m.me/j/AbYMdlDy4P1WitWg/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 7">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 7 <span class="small">Buy & Sell</span></span>
         </a>
