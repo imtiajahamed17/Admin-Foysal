@@ -29,6 +29,7 @@
       color: white;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
+      min-height: 100%; /* <-- THIS LINE WAS ADDED */
     }
 
     .container {
@@ -193,6 +194,33 @@
       .group-links a, .group-item { width: 92%; padding: 8px 10px; gap:10px; }
       .group-links .icon-wrap { width: 40px; height: 40px; }
     }
+    
+    /* =================================== */
+    /* == NEW DESKTOP STYLES START HERE == */
+    /* =================================== */
+
+    @media (min-width: 701px) {
+      
+      html, body {
+        height: 100%;
+        overflow: hidden; /* Prevents the whole page from scrolling */
+      }
+
+      body {
+        display: flex;
+        align-items: center; /* Vertically centers the container */
+        justify-content: center; /* Horizontally centers the container */
+      }
+
+      .container {
+        margin: 0 auto; /* Removes vertical margin, keeps horizontal centering */
+        height: 90vh; /* Sets height to 90% of the viewport's height */
+        max-height: 850px; /* Optional: a max-height for very tall screens */
+        
+        /* This is the magic line: */
+        overflow-y: auto; /* Adds a scrollbar *inside* the container ONLY if needed */
+      }
+    }
   </style>
 </head>
 <body>
@@ -244,27 +272,27 @@
           <span class="text">Group 2 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="https://m.me/j/AbZF404bCzfiL7yF/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 3">
+        <a href="httpsm.me/j/AbZF404bCzfiL7yF/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 3">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 3 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="https://m.me/j/AbYjVzhRdUUjBUDt/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 4">
+        <a href="httpsm.me/j/AbYjVzhRdUUjBUDt/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 4">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 4 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="https://m.me/j/AbbnraqU6sCXm2Dx/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 5">
+        <a href="httpsm.me/j/AbbnraqU6sCXm2Dx/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 5">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 5 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="https://m.me/j/AbZy-wnpx26AE7qq/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 6">
+        <a href="httpsm.me/j/AbZy-wnpx26AE7qq/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 6">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 6 <span class="small">Buy & Sell</span></span>
         </a>
 
-        <a href="https://m.me/j/AbYMdlDy4P1WitWg/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 7">
+        <a href="httpsm.me/j/AbYMdlDy4P1WitWg/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Group 7">
           <span class="icon-wrap" aria-hidden="true"><i class="fas fa-users"></i></span>
           <span class="text">Group 7 <span class="small">Buy & Sell</span></span>
         </a>
@@ -288,7 +316,7 @@
         </div>
         <div class="group-item" role="listitem">
           <span class="icon-wrap"aria-hidden="true"><i class="fas fa-shield-halved"></i></span>
-          <span class="text">UID TOPUP LOW RATE 24 HOUR SERVICE</span>
+          <span classs="text">UID TOPUP LOW RATE 24 HOUR SERVICE</span>
         </div>
       </div>
     </div>
