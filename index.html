@@ -213,87 +213,24 @@
       .container {
         margin: 0 auto; /* Remove vertical margin */
         
-        /* 1. Make it WIDER */
+        /* 1. Make it BIGGER */
         width: 95vw; /* 95% of viewport width */
-        max-width: 900px; /* Max width on huge screens */
-        
-        /* 2. Make it FIT THE SCREEN (height) */
+        max-width: 1000px; /* Max width on huge screens */
         height: 95vh; /* 95% of viewport height */
         max-height: 900px; /* Max height on huge screens */
         
-        /* 3. NO SCROLLING */
-        overflow: hidden; 
+        /* 2. ALLOW SCROLLING (if needed) */
+        overflow-y: auto; 
         
-        /* 4. We must now SQUISH content to fit */
-        padding: 1vh 3vw; /* Use viewport units for padding */
+        /* 3. Keep original padding */
+        padding: 30px;
       }
       
-      /* --- Squish Styles to make it fit --- */
-      
-      .profile-pic {
-        width: 13vh; /* Size relative to height */
-        height: 13vh;
-        max-width: 120px; /* Set max size */
-        max-height: 120px;
-        margin: 0 auto 1vh; /* Reduce bottom margin */
-      }
-
-      h1 {
-        font-size: 1.6rem; /* Reduce font size */
-        margin: 0.5vh 0;
-      }
-
-      p.lead {
-        font-size: 0.9rem; /* Reduce font size */
-        margin: 0.5vh 0 1.5vh; /* Reduce bottom margin */
-        line-height: 1.4;
-      }
-      
-      .section {
-        margin-top: 1.5vh; /* Reduce space between sections */
-      }
-      
-      .section h2 {
-        margin: 0 0 1vh; /* Reduce bottom margin */
-        font-size: 1rem;
-      }
-      
-      .links {
-        gap: 8px;
-        margin-top: 0.5vh;
-      }
-      .btn {
-        padding: 0.8vh 1.2vw; /* Reduce button size */
-        font-size: 0.9rem;
-      }
-      
-      .group-links {
-        margin-top: 0.5vh;
-        gap: 0.8vh; /* Reduce gap between group links */
-      }
-      
-      .group-links a, .group-item {
-        padding: 0.8vh 1.2vw; /* Reduce padding */
-        gap: 10px;
-      }
-      
-      .group-links .icon-wrap {
-        width: 38px;
-        height: 38px;
-        border-radius: 8px;
-      }
-      
-      .group-links .text {
-        font-size: 0.9rem;
-      }
-      .group-links .small {
-        font-size: 0.75rem;
-      }
-      
-      .section:last-child h2 {
-         line-height: 1.3;
-         font-size: 1rem;
-      }
+      /* NO squish styles needed!
+         The content will be its normal (large) size,
+         and the overflow-y: auto will add a
+         scrollbar if it's too tall.
+      */
     }
   </style>
 </head>
@@ -412,4 +349,3 @@
   </div>
 </body>
 </html>
-
