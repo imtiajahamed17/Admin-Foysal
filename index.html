@@ -195,7 +195,7 @@
       .group-links .icon-wrap { width: 40px; height: 40px; }
     }
 
-    /* Desktop/landscape override only for wide screens */
+    /* Desktop landscape override for wide screens only */
     @media (min-width: 769px) and (orientation: landscape) {
       html, body {
         height: 100%;
@@ -211,10 +211,10 @@
       .container {
         width: 95vw; 
         max-width: 1000px;
-        height: 95vh; 
-        max-height: 900px; 
+        height: auto;       /* keep height auto so content scrolls naturally */
+        max-height: 95vh;   /* optional: limit to 95% viewport height */
         padding: 30px;
-        overflow-y: auto;
+        overflow-y: auto;   /* allow scrolling like mobile */
       }
     }
   </style>
