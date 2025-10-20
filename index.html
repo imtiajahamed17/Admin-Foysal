@@ -21,6 +21,11 @@
       --muted: #e2e8f0;
     }
 
+    /* =================================== */
+    /* == 1. MOBILE-FIRST (DEFAULT) STYLES == */
+    /* =================================== */
+    /* This is the good layout for phones held normally */
+    
     html, body {
       margin: 0;
       padding: 0;
@@ -29,25 +34,25 @@
       color: white;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      min-height: 100%; /* <-- MODIFIED */
+      min-height: 100%;
     }
 
     .container {
       max-width: 700px;
-      margin: 28px auto;
+      margin: 28px auto; /* This margin makes it a "card" */
       background: var(--card-bg);
       border-radius: 16px;
       padding: 30px;
       box-shadow: 0 8px 30px rgba(2,6,23,0.6);
       text-align: center;
+      box-sizing: border-box;
     }
 
-    /* This is the class that makes the profile pic circular */
     .profile-pic {
       width: 140px;
       height: 140px;
-      border-radius: 50%;  /* This makes it a circle */
-      object-fit: cover;    /* This prevents the image from stretching */
+      border-radius: 50%;
+      object-fit: cover;
       border: 4px solid var(--accent);
       margin: 0 auto 16px;
       box-shadow: 0 8px 30px rgba(37,99,235,0.18);
@@ -67,7 +72,6 @@
       line-height:1.5;
     }
 
-    /* Contact buttons (modern look with subtle gradient & icon) */
     .links {
       display: flex;
       flex-wrap: wrap;
@@ -92,19 +96,13 @@
 
     .btn:active { transform: translateY(1px); }
 
-    /* brand colors / gradients */
     .btn.whatsapp { background: linear-gradient(135deg,#25D366,#1DA851); color: #04260a; }
     .btn.facebook { background: linear-gradient(135deg,#1877F2,#165fc1); }
     .btn.instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4); }
     .btn.tiktok { background: linear-gradient(135deg,#69C9D0,#EE1D52); }
-    
-    /* NEW: Emergency button styles */
-    .btn.phone { background: linear-gradient(135deg,#22c55e,#15803d); } /* Tailwind Green */
-    .btn.email { background: linear-gradient(135deg,#ef4444,#b91c1c); } /* Tailwind Red */
-    .btn.phone:hover, .btn.email:hover {
-        opacity: 0.9;
-    }
-
+    .btn.phone { background: linear-gradient(135deg,#22c55e,#15803d); }
+    .btn.email { background: linear-gradient(135deg,#ef4444,#b91c1c); }
+    .btn.phone:hover, .btn.email:hover { opacity: 0.9; }
     .btn .fa-fw { font-size: 18px; width: 20px; text-align: center; }
 
     .section { margin-top: 30px; }
@@ -116,21 +114,19 @@
       letter-spacing: 0.2px;
     }
 
-    /* Group links as stacked modern cards with icons */
     .group-links {
       margin-top: 8px;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      align-items: center;         /* center the column container contents */
+      align-items: center;
       width: 100%;
     }
 
-    /* Each group card centered and limited in width so the stack sits in the middle */
-    .group-links a, .group-item { /* Added .group-item for the new text blocks */
+    .group-links a, .group-item {
       width: 84%;
-      max-width: 560px;            /* keep cards a consistent max width */
-      margin: 0 auto;              /* center each card horizontally */
+      max-width: 560px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -143,11 +139,10 @@
       box-shadow: 0 6px 18px rgba(2,6,23,0.25);
     }
     
-    /* Style for the new Admin Service items (which are not links) */
     .group-item {
-        color: #f8fafc; /* Make text a bit brighter */
+        color: #f8fafc;
         cursor: default;
-        padding: 10px 18px; /* Slight padding adjust for non-link item */
+        padding: 10px 18px;
         font-weight: 500;
         text-align: left;
     }
@@ -167,9 +162,8 @@
       box-shadow: 0 6px 14px rgba(37,99,235,0.18);
     }
     
-    /* NEW: Icon wrap for the Admin Service items (Trust/Security theme) */
     .group-item .icon-wrap {
-        background: linear-gradient(135deg, #00b06b, #00804d); /* A nice green for trust */
+        background: linear-gradient(135deg, #00b06b, #00804d);
     }
 
     .group-links .text {
@@ -186,7 +180,7 @@
       font-size: 0.85rem;
     }
 
-    /* smaller screens */
+    /* Media query for very small screens */
     @media (max-width:480px){
       .container { padding: 18px; margin: 18px 12px; }
       .profile-pic { width: 110px; height: 110px; }
@@ -195,11 +189,15 @@
       .group-links .icon-wrap { width: 40px; height: 40px; }
     }
     
-    /* =================================== */
-    /* == NEW DESKTOP STYLES START HERE == */
-    /* =================================== */
 
-    @media (min-width: 701px) {
+    /* =================================== */
+    /* == 2. WIDESCREEN (DESKTOP) STYLES == */
+    /* =================================== */
+    /* This rule applies to DESKTOPS, TABLETS,
+      and PHONES HELD SIDEWAYS.
+    */
+    
+    @media (orientation: landscape) {
       
       html, body {
         height: 100%;
@@ -215,64 +213,67 @@
       .container {
         margin: 0 auto; /* Remove vertical margin */
         
-        /* 1. Make it WIDER (to address "smaller") */
-        max-width: 900px; 
+        /* 1. Make it WIDER */
+        width: 95vw; /* 95% of viewport width */
+        max-width: 900px; /* Max width on huge screens */
         
         /* 2. Make it FIT THE SCREEN (height) */
-        height: 95vh; /* A bit taller */
-        max-height: 900px; /* Max height for very tall screens */
+        height: 95vh; /* 95% of viewport height */
+        max-height: 900px; /* Max height on huge screens */
         
         /* 3. NO SCROLLING */
         overflow: hidden; 
         
         /* 4. We must now SQUISH content to fit */
-        padding: 20px 30px; /* Reduce top/bottom padding */
+        padding: 1vh 3vw; /* Use viewport units for padding */
       }
       
       /* --- Squish Styles to make it fit --- */
       
       .profile-pic {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 10px; /* Reduce bottom margin */
+        width: 13vh; /* Size relative to height */
+        height: 13vh;
+        max-width: 120px; /* Set max size */
+        max-height: 120px;
+        margin: 0 auto 1vh; /* Reduce bottom margin */
       }
 
       h1 {
         font-size: 1.6rem; /* Reduce font size */
-        margin: 4px 0;
+        margin: 0.5vh 0;
       }
 
       p.lead {
         font-size: 0.9rem; /* Reduce font size */
-        margin: 4px 0 15px; /* Reduce bottom margin */
+        margin: 0.5vh 0 1.5vh; /* Reduce bottom margin */
         line-height: 1.4;
       }
       
       .section {
-        margin-top: 15px; /* Reduce space between sections */
+        margin-top: 1.5vh; /* Reduce space between sections */
       }
       
       .section h2 {
-        margin: 0 0 8px; /* Reduce bottom margin */
+        margin: 0 0 1vh; /* Reduce bottom margin */
         font-size: 1rem;
       }
       
       .links {
         gap: 8px;
-        margin-top: 4px;
+        margin-top: 0.5vh;
       }
       .btn {
-        padding: 8px 14px; /* Reduce button size */
+        padding: 0.8vh 1.2vw; /* Reduce button size */
         font-size: 0.9rem;
       }
       
       .group-links {
-        margin-top: 6px;
-        gap: 8px; /* Reduce gap between group links */
+        margin-top: 0.5vh;
+        gap: 0.8vh; /* Reduce gap between group links */
       }
       
       .group-links a, .group-item {
-        padding: 8px 12px; /* Reduce padding */
+        padding: 0.8vh 1.2vw; /* Reduce padding */
         gap: 10px;
       }
       
@@ -283,10 +284,10 @@
       }
       
       .group-links .text {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
       }
       .group-links .small {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
       }
       
       .section:last-child h2 {
@@ -411,3 +412,4 @@
   </div>
 </body>
 </html>
+
